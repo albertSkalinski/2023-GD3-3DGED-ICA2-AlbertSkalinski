@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
@@ -8,7 +7,25 @@ public class Chest : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        prompt = "Chest opened";
-        return true;
+        var inventory = interactor.GetComponent<Inventory>();
+
+        if (inventory == null)
+        {
+            return false;
+        }
+
+        if (inventory.hasMace)
+        {
+            interactor.DisplayMessage("Chest unlocked, you get a key!");
+
+            inventory.ObtainKey();
+
+            return true;
+        }
+        else
+        {
+            interactor.DisplayMessage("Chest locked");
+            return false;
+        }
     }
 }

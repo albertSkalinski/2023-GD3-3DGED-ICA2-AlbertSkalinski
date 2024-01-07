@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour
+public class Barrel : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string prompt;
+    public string InteractionText => prompt;
 
-    // Update is called once per frame
-    void Update()
+    public bool Interact(Interactor interactor)
     {
-        
+        var inventory = interactor.GetComponent<Inventory>();
+
+        if (inventory == null)
+        {
+            return false;
+        }
+
+        interactor.DisplayMessage("Barrel opened, you find a mace!");
+
+        inventory.ObtainMace();
+
+        return true;
     }
 }

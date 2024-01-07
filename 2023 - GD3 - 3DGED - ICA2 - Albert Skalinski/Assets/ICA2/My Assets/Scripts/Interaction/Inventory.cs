@@ -5,12 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public bool hasKey = false;
+    public bool hasMace = false;
 
-    private void Update()
+    public void ObtainKey()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            hasKey = true;
-        }
+        hasKey = true;
+    }
+
+    public void ObtainMace()
+    {
+        hasMace = true;
     }
 }
