@@ -8,7 +8,7 @@ public class Chest : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        Debug.Log("Chest opened");
+        prompt = "Chest opened";
         return true;
     }
 }

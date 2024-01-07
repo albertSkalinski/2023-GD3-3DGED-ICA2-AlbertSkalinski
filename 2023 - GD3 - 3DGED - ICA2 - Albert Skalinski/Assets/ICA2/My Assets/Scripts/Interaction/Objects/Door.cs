@@ -17,11 +17,12 @@ public class Door : MonoBehaviour, IInteractable
 
         if (inventory.hasKey)
         {
-            Debug.Log("Door opened");
-            return true;
+            Debug.Log("Door unlocked");
         }
-
-        Debug.Log("Door locked");
+        else
+        {
+            Debug.Log("Door locked");
+        }
         return false;
     }
 }

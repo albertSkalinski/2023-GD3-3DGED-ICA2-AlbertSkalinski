@@ -31,7 +31,7 @@ public class Interactor : MonoBehaviour
                     interactionPromptUI.SetUp(interactable.InteractionText);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.F))
                 {
                     interactable.Interact(this);
                 }
