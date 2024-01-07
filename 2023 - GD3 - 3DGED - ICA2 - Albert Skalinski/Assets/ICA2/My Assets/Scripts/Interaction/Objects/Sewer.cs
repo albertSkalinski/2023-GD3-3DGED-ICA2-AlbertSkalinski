@@ -6,10 +6,11 @@ public class Sewer : MonoBehaviour, IInteractable
 {
     [SerializeField] private string prompt;
     public string InteractionText => prompt;
+    public AudioSource soundEffectSource;
 
     public bool Interact(Interactor interactor)
     {
-
+        soundEffectSource.Play();
         interactor.DisplayMessage("Stinky!");
 
         return true;

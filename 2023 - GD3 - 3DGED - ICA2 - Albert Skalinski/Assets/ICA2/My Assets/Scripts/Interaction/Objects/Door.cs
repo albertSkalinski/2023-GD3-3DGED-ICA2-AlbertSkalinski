@@ -1,13 +1,17 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour, IInteractable
 {
     [SerializeField] private string prompt;
     public string InteractionText => prompt;
 
+    public AudioSource soundEffectSource;
+
     public bool Interact(Interactor interactor)
     {
+        soundEffectSource.Play();
         var inventory = interactor.GetComponent<Inventory>();
 
         if (inventory == null)
@@ -19,6 +23,7 @@ public class Door : MonoBehaviour, IInteractable
         {
             // Display message on screen
             interactor.DisplayMessage("Door unlocked");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
