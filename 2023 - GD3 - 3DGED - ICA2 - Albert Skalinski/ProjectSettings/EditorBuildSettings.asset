@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/ICA2/My Assets/Scenes/Completed/Menu.unity
+    guid: 845842d94bebea941a3d657eb62f4c50
+  - enabled: 1
+    path: Assets/ICA2/My Assets/Scenes/Completed/Before playing.unity
+    guid: 9a62a2e3747885a4e9bd1e185df1f102
+  - enabled: 1
+    path: Assets/ICA2/My Assets/Scenes/InProgress/Interactions done.unity
+    guid: e241110543a06234e93eb561184777c3
+  - enabled: 1
+    path: Assets/ICA2/My Assets/Scenes/Completed/After playing.unity
+    guid: cc71d9af7a228d74c9365bede16281f3
   m_configObjects: {}

@@ -16,7 +16,7 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (inventory.hasMace)
         {
-            interactor.DisplayMessage("Chest unlocked, you get a key!");
+            interactor.DisplayMessage("Chest's lock smashed, you get a key!");
 
             inventory.ObtainKey();
 
