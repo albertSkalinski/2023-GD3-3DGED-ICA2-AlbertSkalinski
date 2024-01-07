@@ -19,7 +19,7 @@ public class Interactor : MonoBehaviour
     {
         numFound = Physics.OverlapSphereNonAlloc(interactionPoint.position,
             interactionRadius, colliders, interactionLayerMask);
-        
+
         if (numFound > 0)
         {
             interactable = colliders[0].GetComponent<IInteractable>();
@@ -48,6 +48,12 @@ public class Interactor : MonoBehaviour
                 interactionPromptUI.Close();
             }
         }
+    }
+
+    // Display message on screen using InteractionPromptUI
+    public void DisplayMessage(string message)
+    {
+        interactionPromptUI.SetUp(message);
     }
 
     private void OnDrawGizmos()
