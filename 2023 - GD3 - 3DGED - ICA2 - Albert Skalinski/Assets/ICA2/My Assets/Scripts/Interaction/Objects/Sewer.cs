@@ -8,6 +8,7 @@ public class Sewer : MonoBehaviour, IInteractable
     public string InteractionText => prompt;
     public AudioSource soundEffectSource;
 
+    //Displays message
     public bool Interact(Interactor interactor)
     {
         soundEffectSource.Play();

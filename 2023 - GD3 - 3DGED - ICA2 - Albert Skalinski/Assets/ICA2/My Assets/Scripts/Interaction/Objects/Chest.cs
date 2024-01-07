@@ -16,6 +16,7 @@ public class Chest : MonoBehaviour, IInteractable
             return false;
         }
 
+        //checks for mace in inventory, if true, unlocks chest and gives key, if false, says chest is locked
         if (inventory.hasMace)
         {
             interactor.DisplayMessage("Chest's lock smashed, you get a key!");

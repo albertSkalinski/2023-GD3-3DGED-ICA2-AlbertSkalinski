@@ -4,6 +4,8 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=THmW4YolDok, Accessed On: <01/24>, Using Line Numbers: 9-40
+
 public class InteractionPromptUI : MonoBehaviour
 {
     private Camera cam;
@@ -18,6 +20,7 @@ public class InteractionPromptUI : MonoBehaviour
 
     private void LateUpdate()
     {
+        //makes the UI face the camera
         var rotation = cam.transform.rotation;
         transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
     }
@@ -35,4 +38,5 @@ public class InteractionPromptUI : MonoBehaviour
     {
            UIPanel.SetActive(false);
            isDisplayed = false;
-       }}
+    }
+}

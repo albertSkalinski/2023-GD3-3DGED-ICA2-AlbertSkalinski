@@ -17,6 +17,7 @@ public class Barrel : MonoBehaviour, IInteractable
             return false;
         }
 
+        //displays message to player & adds mace to inventory
         interactor.DisplayMessage("Barrel opened, you find a mace!");
 
         inventory.ObtainMace();

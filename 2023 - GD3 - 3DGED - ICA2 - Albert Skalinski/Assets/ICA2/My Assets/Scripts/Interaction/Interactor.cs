@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=THmW4YolDok, Accessed On: <01/24>, Using Line Numbers: 8-67, but modifed to my own needs
+
 public class Interactor : MonoBehaviour
 {
     [SerializeField] private Transform interactionPoint;
@@ -19,7 +21,8 @@ public class Interactor : MonoBehaviour
     {
         numFound = Physics.OverlapSphereNonAlloc(interactionPoint.position,
             interactionRadius, colliders, interactionLayerMask);
-
+        
+        //If there is an interactable object, display the message and allow the player to interact with it
         if (numFound > 0)
         {
             interactable = colliders[0].GetComponent<IInteractable>();
@@ -37,6 +40,7 @@ public class Interactor : MonoBehaviour
                 }
             }
         }
+        //If there is no interactable object, doesn't display the message
         else
         {
             if (interactable != null)
@@ -49,13 +53,13 @@ public class Interactor : MonoBehaviour
             }
         }
     }
-
-    // Display message on screen using InteractionPromptUI
+    //Displays message from an object
     public void DisplayMessage(string message)
     {
         interactionPromptUI.SetUp(message);
     }
 
+    //Illustrates the interaction radius
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

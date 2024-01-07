@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public bool hasKey = false;
     public bool hasMace = false;
 
+    //Functions for obtaining items
     public void ObtainKey()
     {
         hasKey = true;
